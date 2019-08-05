@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Link } from 'react-router-dom'
 
-import  CustomersList from './CustomersList'
-import  CustomerCreateUpdate  from './CustomerCreateUpdate'
+import  DepartmentsList from './DepartmentsList'
+import  DepartmentCreateUpdate  from './DepartmentCreateUpdate'
 import './App.css';
 
 const BaseLayout = () => (
@@ -15,17 +15,17 @@ const BaseLayout = () => (
   </button>
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div className="navbar-nav">
-      <a className="nav-item nav-link" href="/">CUSTOMERS</a>
-      <a className="nav-item nav-link" href="/customer">CREATE CUSTOMER</a>
+      <a className="nav-item nav-link" href="/">Departments</a>
+      <a className="nav-item nav-link" href="/customer">Create Department</a>
 
     </div>
   </div>
 </nav>  
 
     <div className="content">
-      <Route path="/" exact component={CustomersList} />
-      <Route path="/customer/:pk"  component={CustomerCreateUpdate} />
-      <Route path="/customer/" exact component={CustomerCreateUpdate} />
+      <Route path="/" exact component={DepartmentsList} />
+      <Route path="/customer/:pk"  component={CustomerCreateUpdate: DepartmentCreateUpdate} />
+      <Route path="/customer/" exact component={CustomerCreateUpdate: DepartmentCreateUpdate} />
 
     </div>
 
