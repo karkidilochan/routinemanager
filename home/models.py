@@ -20,7 +20,7 @@ class Programs(models.Model):
 
 class Rooms(models.Model):
 
-    departmentid = models.ForeignKey(Departments, on_delete=models.CASCADE, null=True)  # Field name made lowercase.
+    departmentid = models.ForeignKey(Departments, on_delete=models.CASCADE)  # Field name made lowercase.
     roomname = models.CharField(primary_key=True, max_length=18)  # Field name made lowercase.
     description = models.CharField(max_length=40, blank=True, null=True)  # Field name made lowercase.
 
@@ -31,17 +31,17 @@ class Rooms(models.Model):
 class Subjects(models.Model):
     subjectid = models.CharField(max_length=13, primary_key=True, blank=True)  # Field name made lowercase.
     subjectname = models.CharField(max_length=50, blank=True, null=True)  # Field name made lowercase.
-    departmentid = models.ForeignKey(Departments, on_delete=models.CASCADE, null=True)  # Field name made lowercase.
+    departmentid = models.ForeignKey(Departments, on_delete=models.CASCADE)  # Field name made lowercase.
     tyear = models.CharField(max_length=3, blank=True, null=True)  # Field name made lowercase.
     tpart = models.CharField(max_length=2, blank=True, null=True)  # Field name made lowercase.
-    iselective = models.BooleanField(default=False, blank=True, null=True)
+    iselective = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return self.subjectname
 
 
 class Teachers(models.Model):
-    departmentid = models.ForeignKey(Departments, on_delete=models.CASCADE, null=True)  # Field name made lowercase.
+    departmentid = models.ForeignKey(Departments, on_delete=models.CASCADE)  # Field name made lowercase.
     teacherid = models.CharField(max_length=3, primary_key=True, blank=True)  # Field name made lowercase.
     teachername = models.CharField(max_length=32, blank=True, null=True)  # Field name made lowercase.
     totalclasses = models.FloatField(blank=True, null=True)
